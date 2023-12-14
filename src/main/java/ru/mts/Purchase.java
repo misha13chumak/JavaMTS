@@ -1,32 +1,34 @@
 package ru.mts;
 
-// Purchase.java
+import java.math.BigDecimal;
 
-
+/**
+ * Класс Purchase выводит информацию о покупке, включая количество товаров,
+ * общую сумму без скидки и процент скидки на товар. Для финансовых расчетов,
+ * в этом классе использован класс BigDecimal.
+ */
 public class Purchase {
     // Количество товаров
     private int itemCount;
 
     // Сумма товара без скидки
-    private double totalAmount;
+    private BigDecimal totalAmount;
 
     // Скидка на товар
-    private double discount;
-
+    private BigDecimal discount;
 
     public Purchase(int itemCount, double totalAmount, double discount) {
         this.itemCount = itemCount;
-        this.totalAmount = totalAmount;
-        this.discount = discount;
+        this.totalAmount = BigDecimal.valueOf(totalAmount);
+        this.discount = BigDecimal.valueOf(discount);
     }
-
 
     public void calculateTotal() {
-        double totalWithoutDiscount = itemCount * totalAmount;
-        double discountedTotal = totalWithoutDiscount * (1 - discount / 100);
+        BigDecimal totalWithoutDiscount = totalAmount.multiply(BigDecimal.valueOf(itemCount));
+        BigDecimal discountedTotal = totalWithoutDiscount.multiply(BigDecimal.ONE.subtract(discount.divide(BigDecimal.valueOf(100))));
 
         System.out.println("Общая сумма покупки без скидки: " + totalWithoutDiscount);
-        System.out.println("Общая сумма покупки со скидкой: " + String.format("%.2f", discountedTotal));
+        System.out.println("Общая сумма покупки со скидкой: " + discountedTotal.setScale(2, BigDecimal.ROUND_HALF_UP));
+        System.out.println("");
     }
 }
-
