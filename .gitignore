@@ -1,9 +1,6 @@
 HELP.md
 .gradle
-/build
-gradle/wrapper/
-gradlew
-gradlew.bat
+build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
@@ -23,7 +20,6 @@ gradlew.bat
 *.iml
 *.ipr
 out/
-gradlew.bat
 
 ### NetBeans ###
 /nbproject/private/
