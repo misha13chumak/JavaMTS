@@ -81,4 +81,6 @@ public class CreateOneUniqueAnimal {
         Random random = new Random();
         return BigDecimal.valueOf(random.nextDouble() * 50000.0);
     }
+
+
 }

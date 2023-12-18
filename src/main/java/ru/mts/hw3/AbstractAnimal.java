@@ -50,4 +50,6 @@ public abstract class AbstractAnimal implements Animal {
     public String getCharacter() {
         return character;
     }
+
+
 }

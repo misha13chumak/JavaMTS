@@ -11,18 +11,21 @@ public interface Animal {
      * @return Порода животного.
      */
     String getBreed();
+
     /**
      * Получить имя животного.
      *
      * @return Имя животного.
      */
     String getName();
+
     /**
      * Получить стоимость животного.
      *
      * @return Стоимость животного в формате BigDecimal.
      */
     BigDecimal getCost();
+
     /**
      * Получить характер животного.
      *

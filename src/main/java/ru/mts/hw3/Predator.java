@@ -10,4 +10,6 @@ public abstract class Predator extends AbstractAnimal {
     Predator() {
         this.character = "Angry";
     }
+
+
 }

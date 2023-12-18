@@ -19,7 +19,7 @@ public class Wolf extends Predator {
         this.cost = cost.setScale(2, RoundingMode.HALF_UP);
     }
     /**
-     * Переопределенный метод toString для получения строкового представления волка.
+     * Метод toString для получения строкового представления волка.
      *
      * @return Строковое представление волка.
      */

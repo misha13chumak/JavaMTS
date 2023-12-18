@@ -23,4 +23,6 @@ public class CreateAnimalServiceImpl implements CreateAnimalService {
             System.out.println(a.createOneUniqueAnimal());
         }
     }
+
+
 }

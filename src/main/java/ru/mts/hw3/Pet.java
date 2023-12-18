@@ -11,4 +11,5 @@ public abstract class Pet extends AbstractAnimal {
         this.character = "Kind";
     }
 
+
 }
