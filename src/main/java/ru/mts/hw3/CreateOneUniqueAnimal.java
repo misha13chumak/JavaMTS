@@ -38,7 +38,7 @@ public class CreateOneUniqueAnimal {
      * @return Случайная порода.
      */
     private String generateRandomBreed(int randomNum) {
-        int MAX_COUNT_BREED_ANIMAL = 10;
+        final int  MAX_COUNT_BREED_ANIMAL = 10;
         Random random = new Random();
         switch (randomNum) {
             case 0: // Для собаки
