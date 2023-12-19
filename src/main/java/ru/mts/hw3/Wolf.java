@@ -6,6 +6,22 @@ import java.math.RoundingMode;
  * Класс, представляющий собой волка. Наследуется от класса Predator.
  */
 public class Wolf extends Predator {
+
+    /**
+     * Конструктор класса Wolf.
+     *
+     * @param breed Порода волка.
+     * @param name  Имя волка.
+     * @param cost  Стоимость волка.
+     * @param character Характер волка.
+     */
+    public Wolf(String breed, String name, BigDecimal cost, String character) {
+        this.breed = breed;
+        this.name = name;
+        this.cost = cost.setScale(2, RoundingMode.HALF_UP);
+        this.character = character;
+    }
+
     /**
      * Конструктор класса Wolf.
      *

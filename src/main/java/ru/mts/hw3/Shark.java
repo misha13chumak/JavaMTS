@@ -7,6 +7,22 @@ import java.math.RoundingMode;
  * Класс, представляющий собой акулу. Наследуется от класса Predator.
  */
 public class Shark extends Predator {
+
+    /**
+     * Конструктор класса Shark.
+     *
+     * @param breed Порода акула.
+     * @param name  Имя акула.
+     * @param cost  Стоимость акула.
+     * @param character Характер акула.
+     */
+    public Shark(String breed, String name, BigDecimal cost, String character) {
+        this.breed = breed;
+        this.name = name;
+        this.cost = cost.setScale(2, RoundingMode.HALF_UP);
+        this.character = character;
+    }
+
     /**
      * Конструктор класса Shark.
      *

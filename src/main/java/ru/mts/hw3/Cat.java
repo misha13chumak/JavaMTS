@@ -7,6 +7,22 @@ import java.math.RoundingMode;
  * Класс, представляющий собой кошку. Наследуется от класса Pet.
  */
 public class Cat extends Pet {
+
+    /**
+     * Конструктор класса Cat.
+     *
+     * @param breed Порода кошки.
+     * @param name  Имя кошки.
+     * @param cost  Стоимость кошки.
+     * @param character Характер кошки.
+     */
+    public Cat(String breed, String name, BigDecimal cost, String character) {
+        this.breed = breed;
+        this.name = name;
+        this.cost = cost.setScale(2, RoundingMode.HALF_UP);
+        this.character = character;
+    }
+
     /**
      * Конструктор класса Cat.
      *
