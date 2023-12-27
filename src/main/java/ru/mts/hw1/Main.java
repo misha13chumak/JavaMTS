@@ -1,5 +1,7 @@
 package ru.mts.hw1;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         // Тестирование с различными объектами
