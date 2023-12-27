@@ -6,5 +6,5 @@ public interface SearchService {
 
     String[] findLeapYearNames(Animal[] animals);
     Animal[] findOlderAnimal(Animal[] animals, int age);
-    Animal[] findDuplicate(Animal[] animals);
+    void findDuplicate(Animal[] animals);
 }

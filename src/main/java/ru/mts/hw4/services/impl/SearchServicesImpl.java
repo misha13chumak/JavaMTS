@@ -72,34 +72,33 @@ public class SearchServicesImpl implements SearchService {
      * @return Массив животных с дублирующимися именами.
      * @throws IllegalArgumentException Если массив животных равен null.
      */
-    @Override
-    public Animal[] findDuplicate(Animal[] animals) {
+    public void findDuplicate(Animal[] animals) {
         if (animals == null) {
             throw new IllegalArgumentException("Массив животных не может быть null");
         }
 
-        Set<String> uniqueNames = new HashSet<>();
-        Set<String> duplicateNames = new HashSet<>();
+        Map<String, Integer> nameCountMap = new HashMap<>();
 
         for (Animal animal : animals) {
             if (animal != null) {
-                if (!uniqueNames.add(animal.getName())) {
-                    duplicateNames.add(animal.getName());
-                }
+                String name = animal.getName();
+                int count = nameCountMap.getOrDefault(name, 0);
+                nameCountMap.put(name, count + 1);
             }
         }
 
-        if (!duplicateNames.isEmpty()) {
-            System.out.println("Имена дубликатов животных: " + duplicateNames);
-        } else {
-            System.out.println("Дубликатов не найдено");
+        boolean duplicatesFound = false;
+
+        for (Map.Entry<String, Integer> entry : nameCountMap.entrySet()) {
+            if (entry.getValue() > 1) {
+                duplicatesFound = true;
+                System.out.println(entry.getKey() + " - количество дубликатов: " + entry.getValue());
+            }
         }
 
-        return duplicateNames.stream()
-                .map(name -> Arrays.stream(animals)
-                        .filter(animal -> animal != null && animal.getName().equals(name))
-                        .findFirst()
-                        .orElse(null))
-                .toArray(Animal[]::new);
+        if (!duplicatesFound) {
+            System.out.println("Дубликатов не найдено");
+        }
     }
+
 }
